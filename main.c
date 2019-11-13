@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 	{
 		printf("grade[%i] = %i\n",i,grade[i]);	
 	}
-	//¹İº¹µÇ´Â ºÎºĞÀ» ¸Å¿ì ±ò²ûÇÏ°Ô ¾µ ¼ö ÀÖÀ½. 
+	//ë°˜ë³µë˜ëŠ” ë¶€ë¶„ì„ ë§¤ìš° ê¹”ë”í•˜ê²Œ ì“¸ ìˆ˜ ìˆìŒ. 
 	
 	*/
 	
@@ -51,88 +51,53 @@ int main(int argc, char *argv[]) {
 	
 	for (i=0;i<5;i++)
 	{
-		if (a[i] != b[i])  //¹è¿­À» ºñ±³ÇÒ ¶§ ¿ä¼Òº°·Î ÇØ¾ßÇÑ´Ù. 
+		if (a[i] != b[i])  //ë°°ì—´ì„ ë¹„êµí•  ë•Œ ìš”ì†Œë³„ë¡œ í•´ì•¼í•œë‹¤. 
 		{
-			printf("%i is different\n", i);  //¼­·Î ´Ù¸¥ ¹è¿­ °ªÀÏ °æ¿ì ±× index°¡ Ãâ·ÂµÈ´Ù. ¿©±â¼± 4¹øÂ°ÀÎ 3¹ø ÀÎµ¦½º°¡ Ãâ·ÂµÉ °Í. 
+			printf("%i is different\n", i);  //ì„œë¡œ ë‹¤ë¥¸ ë°°ì—´ ê°’ì¼ ê²½ìš° ê·¸ indexê°€ ì¶œë ¥ëœë‹¤. ì—¬ê¸°ì„  4ë²ˆì§¸ì¸ 3ë²ˆ ì¸ë±ìŠ¤ê°€ ì¶œë ¥ë  ê²ƒ. 
 		}
 	}
 	
 	*/
 	
-	#define ROWS 3
-	deefine COLS 3
-	
-void addMatrx(int A[][COLS], int B[][COLS], int
-C[][COLS])
+	#06#include <stdio.h>
+#include <stdlib.h>
+#define ROWS 3
+#define COLS 3
+
+void printMatrix(int a[][COLS])
 {
-	//C = A + B ÇüÅÂ·Î Çà·Ä °è»ê
-	//for¹®À» ÀÌ¿ëÇØ¼­ °è»ê
+    int i,j;
+    
+    for(i=0;i<ROWS;i++){
+	
+     for(j=0;j<COLS;j++){
+	  printf("%i ",a[i][j]);}
+	 printf("\n"); 
+    }
 }
-void printMatrx(int A[][COLS])
-{
-	]]//for¹®À» ÀÌ¿ëÇØ¼­ °è»ê
+
+void addMatrix(int a[][COLS],int b[][COLS],int c[][COLS]){
+	 int i,j;
+    
+    for(i=0;i<ROWS;i++)
+     for(j=0;j<COLS;j++)
+	  c[i][j]=a[i][j]+b[i][j];
 }
-	
-int main(void)
-{
-	int A[ROWS][COLS] = { 	//´õÇÏ±â ´ë»ó Çà·Ä
-		{2, 3, 0},
-		{8, 9, 1},
-		{7, 0, 5} };
-	int B[ROWS][COLS] = { 	//´õÇÏ±â ´ë»ó Çà·Ä
-		{1, 0, 0},
-		{0, 1, 0},
-		{0, 0, 1} };
-	int C[ROWS][COLS]; 		//µ¡¼À °á°ú Çà·Ä
-		printMatrix(C);
 
-	addMatrix(A,B,C);
-	printf(Matrix(0);)
-
-void printMatrix(in a[CoLs)
-
-	return 0;
+int main(int argc, char *argv[]) {
 	
+	int a [ROWS][COLS]={
+	 {2,3,0},
+	 {8,9,1},
+	 {7,0,5}};
+	int b [ROWS][COLS]={
+	 {1,0,0},
+	 {0,1,0},
+	 {0,0,1}};
+	int c [ROWS][COLS];
 	
+	addMatrix(a,b,c);
+	printMatrix(c);
 	
-	#06
-void addMatrx(int A[][COLS], int B[][COLS], int C[][COLS])
-	{
-		int i, j;
-		for (i=0;i<ROWS;i++)
-			for (j=0;j<COLS;j++)
-				c[i][j] = a[i][j]+b[i][j];
-		//C = A + B ÇüÅÂ·Î Çà·Ä °è»ê
-		//for¹®À» ÀÌ¿ëÇØ¼­ °è»ê
-	}
-	
-void printMatrx(int A[][COLS])
-	{
-		int i, j;
-		for (i=0;i<ROWS;i++) {
-			for (j=0;j<COLS;j++)
-				printf("%i", a[i][j]);
-			printf("\n");
-		}	//for¹®À» ÀÌ¿ëÇØ¼­ °è»ê
-	}
-
-	int main(void)
-	{
-		int A[ROWS][COLS] = { //´õÇÏ±â ´ë»ó Çà·Ä
-			{2, 3, 0},
-			{8, 9, 1},
-			{7, 0, 5} };
-		int B[ROWS][COLS] = { //´õÇÏ±â ´ë»ó Çà·Ä
-			{1, 0, 0},
-			{0, 1, 0},
-			{0, 0, 1} };
-		int C[ROWS][COLS]; //µ¡¼À °á°ú Çà·Ä
-			addMatrix(A, B, C);
-			printMatrix(C);
-		return 0;
-		}
-	
-	
-	 
 	return 0;
 }
